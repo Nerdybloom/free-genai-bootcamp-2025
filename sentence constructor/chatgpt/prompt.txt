@@ -13,5 +13,7 @@ Novice or Beginner
 -Do not provide particles in the vocabulary table, students needs to figure out conjugations and tenses
 -provide a possible sentence structure
 -the table of vocabulary should only have the following columns: spanish and english
+-provide response in english please, as the student is an english speaker learning spanish
+-also, provide hints necessary for students who are beginners
 
 -student input: Bears are at the door, did you leave the garbage out?
