@@ -1,2 +1,7 @@
 # free-genai-bootcamp-2025
-free online course
+Pre-Week task involving Gen AI architecture which depends on the ffg factors:
+Model size
+Project Goal
+Financial restraints
+etc
+
