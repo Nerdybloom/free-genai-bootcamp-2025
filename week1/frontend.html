@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English to Spanish Translator</title>
+</head>
+<body>
+    <h1>Translate English to Spanish</h1>
+    <input type="text" id="text" placeholder="Enter text">
+    <button onclick="translateText()">Translate</button>
+    <p id="result"></p>
+
+    <script>
+        async function translateText() {
+            const text = document.getElementById("text").value;
+            if (!text) {
+                document.getElementById("result").innerText = "Please enter text to translate.";
+                return;
+            }
+
+            try {
+                const response = await fetch("http://127.0.0.1:8000/translate/?text=" + encodeURIComponent(text), {
+                    method: "GET",
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                if (!response.ok) {
+                    throw new Error("Server error");
+                }
+
+                const data = await response.json();
+                document.getElementById("result").innerHTML = 
+                    `<b>Translation:</b> ${data.translated_text} <br> <b>Explanation:</b> ${data.explanation}`;
+            } catch (error) {
+                document.getElementById("result").innerText = "Error fetching translation. Make sure the server is running.";
+            }
+        }
+    </script>
+</body>
+</html>
